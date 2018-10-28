@@ -8,6 +8,8 @@
     tools:context=".ManualConstraintActivity"
     tools:showIn="@layout/activity_manual_constraint">
 
+
+
     <ImageView
         android:id="@+id/content_img"
         android:layout_width="150dp"
@@ -50,5 +52,10 @@
         app:layout_constraintRight_toRightOf="@id/content_img"
         android:layout_marginTop="11dp"/>
 
-
+    <com.botpy.constrainlayoutexample.view.ChineseEdittext
+        android:id="@+id/content_edit"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/content_btn1"
+        android:hint="请输入"/>
 </android.support.constraint.ConstraintLayout>
