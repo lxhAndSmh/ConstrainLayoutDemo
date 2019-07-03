@@ -65,13 +65,16 @@ public class BaseSkinActivity extends AppCompatActivity {
      * @param skinView
      */
     private void managerSkinView(SkinView skinView) {
+        Log.d(TAG, "skinView-----" + skinView.toString() + "----activity---2---:" + this);
         List<SkinView> skinViews = SkinManager.getInstance().getSkinViews(this);
         if(skinViews == null) {
             skinViews = new ArrayList<>();
             SkinManager.getInstance().register(this, skinViews);
         }
+        Log.d(TAG, "skinViews---2---:" + skinViews.toString());
         skinViews.add(skinView);
-//        SkinManager.getInstance().changeSkin(skinView);
+        Log.d(TAG, "skinViews---2--add--:" + skinViews.toString());
+        SkinManager.getInstance().changeSkin(skinView);
     }
 
 

@@ -2,6 +2,7 @@ package com.botpy.framelibrary.skin.attr;
 
 import android.content.res.ColorStateList;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -18,9 +19,14 @@ public enum SkinType {
 
     /** 颜色*/
     TEXT_COLOR("textColor") {
+
         @Override
         public void skin(View skinView, String mResName) {
+            Log.d("SkinType", "--textColor---mResName: " + mResName);
             SkinResource skinResource = getSkinResource();
+            if(skinResource == null) {
+                return;
+            }
             ColorStateList colorStateList = skinResource.getColorByName(mResName);
             if(colorStateList == null) {
                 return;
@@ -32,7 +38,11 @@ public enum SkinType {
     BACK_GROUND("background"){
         @Override
         public void skin(View skinView, String mResName) {
+            Log.d("SkinType", "--background---mResName: " + mResName);
             SkinResource skinResource = getSkinResource();
+            if(skinResource == null) {
+                return;
+            }
             Drawable drawable = skinResource.getDrawableByName(mResName);
             if(drawable != null) {
                 ImageView imageView = (ImageView) skinView;
@@ -49,8 +59,12 @@ public enum SkinType {
     SRC("src"){
         @Override
         public void skin(View skinView, String mResName) {
+            Log.d("SkinType", "--src---mResName: " + mResName);
             //获取资源设置
             SkinResource skinResource = getSkinResource();
+            if(skinResource == null) {
+                return;
+            }
             Drawable drawable = skinResource.getDrawableByName(mResName);
             if(drawable != null) {
                 ImageView imageView = (ImageView) skinView;
