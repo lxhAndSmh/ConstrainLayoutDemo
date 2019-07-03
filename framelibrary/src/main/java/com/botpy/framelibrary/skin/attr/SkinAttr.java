@@ -5,7 +5,7 @@ import android.view.View;
 /**
  * @author liuxuhui
  * @date 2019/7/2
- * 要换的资源有哪些，比如改变背景（或颜色）等
+ * 要换资源
  */
 public class SkinAttr {
 

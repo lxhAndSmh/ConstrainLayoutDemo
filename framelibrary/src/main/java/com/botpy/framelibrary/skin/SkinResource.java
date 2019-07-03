@@ -28,7 +28,9 @@ public class SkinResource {
             Method method = AssetManager.class.getDeclaredMethod("addAssetPath", String.class);
             //反射执行方法
             Log.d("SkinResource", "---skinPath: " + skinPath);
+            //把一个包含资源的文件包添加到assets中。 通过反射调用，查找到该路径下的资源
             method.invoke(assetManager, skinPath);
+            //获取该文件包的资源对象。
             mResource = new Resources(assetManager, context.getResources().getDisplayMetrics(), context.getResources().getConfiguration());
 
             //获取 skinPath 的包名
