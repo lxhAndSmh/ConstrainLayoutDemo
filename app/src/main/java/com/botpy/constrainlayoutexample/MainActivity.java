@@ -33,7 +33,7 @@ public class MainActivity extends BaseSkinActivity {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.button:
-                Intent intent = new Intent(this, MainActivity.class);
+                Intent intent = new Intent(this, ColorTrackActivity.class);
                 startActivity(intent);
                 break;
 
