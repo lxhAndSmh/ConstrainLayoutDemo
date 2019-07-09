@@ -7,7 +7,6 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.text.TextUtils;
 import android.util.AttributeSet;
-import android.util.Log;
 
 import com.botpy.constrainlayoutexample.R;
 
@@ -63,9 +62,9 @@ public class ColorTrackTextView extends android.support.v7.widget.AppCompatTextV
         super(context, attrs, defStyleAttr);
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.ColorTrackTextView);
         int normalColor = typedArray.getColor(R.styleable.ColorTrackTextView_normal_color, getResources().getColor(R.color.gray));
-        int changerColor = typedArray.getColor(R.styleable.ColorTrackTextView_changer_color, getResources().getColor(R.color.colorAccent));
+        int changeColor = typedArray.getColor(R.styleable.ColorTrackTextView_changer_color, getResources().getColor(R.color.colorAccent));
         mNormalPaint = getPaint(normalColor);
-        mChangerPaint = getPaint(changerColor);
+        mChangerPaint = getPaint(changeColor);
         typedArray.recycle();
     }
 
@@ -98,16 +97,6 @@ public class ColorTrackTextView extends android.support.v7.widget.AppCompatTextV
     }
 
     /**
-     * 变色的占比
-     * @param decent
-     */
-    public void change(@NonNull Direction mDirection, float decent) {
-        this.mDirection = mDirection;
-        this.decent = decent;
-        invalidate();
-    }
-
-    /**
      * 绘制文字
      * @param paint 画笔
      * @param startX 裁剪显示的起始位置
@@ -122,5 +111,24 @@ public class ColorTrackTextView extends android.support.v7.widget.AppCompatTextV
             canvas.drawText(text, x, y, paint);
             canvas.restore();
         }
+    }
+
+    /**
+     * 变色的占比
+     * @param decent
+     */
+    public void change(@NonNull Direction mDirection, float decent) {
+
+        this.mDirection = mDirection;
+        this.decent = decent;
+        invalidate();
+    }
+
+    public void setmNormalPaint(int mNormalColor) {
+        mNormalPaint = getPaint(mNormalColor);
+    }
+
+    public void setmChangerPaint(int mChangerColor) {
+        mChangerPaint = getPaint(mChangerColor);
     }
 }
