@@ -11,6 +11,7 @@ import android.util.Log;
 
 import com.botpy.constrainlayoutexample.R;
 
+import io.reactivex.annotations.NonNull;
 import io.reactivex.annotations.Nullable;
 
 /**
@@ -33,6 +34,21 @@ public class ColorTrackTextView extends android.support.v7.widget.AppCompatTextV
      * 改变颜色的百分比
      */
     private float decent;
+    /**
+     * 变色的方向
+     */
+    private Direction mDirection = Direction.DIRECTION_LEFT;
+
+    public enum Direction{
+        /**
+         * 从左往右变色
+         */
+        DIRECTION_LEFT,
+        /**
+         * 从右往左变色
+         */
+        DIRECTION_RIGH;
+    }
 
 
     public ColorTrackTextView(Context context) {
@@ -69,9 +85,15 @@ public class ColorTrackTextView extends android.support.v7.widget.AppCompatTextV
             float x = canvas.getWidth() / 2 - rect.width() / 2;
             float y = canvas.getHeight() /2 + rect.height() / 2 -  mNormalPaint.descent();
             //颜色改变的位置
-            int middle = (int) (x + rect.width() * decent);
-            drawText(mChangerPaint, canvas, x, middle, x, y, textStr);
-            drawText(mNormalPaint, canvas, middle, getWidth(), x, y, textStr);
+            if(Direction.DIRECTION_LEFT == mDirection) {
+                int middle = (int) (x + rect.width() * decent);
+                drawText(mChangerPaint, canvas, x, middle, x, y, textStr);
+                drawText(mNormalPaint, canvas, middle, getWidth(), x, y, textStr);
+            }else if(Direction.DIRECTION_RIGH == mDirection) {
+                int middle = (int) (x + rect.width() * (1 - decent));
+                drawText(mNormalPaint, canvas, x, middle, x, y, textStr);
+                drawText(mChangerPaint, canvas, middle, getWidth(), x, y, textStr);
+            }
         }
     }
 
@@ -79,7 +101,8 @@ public class ColorTrackTextView extends android.support.v7.widget.AppCompatTextV
      * 变色的占比
      * @param decent
      */
-    public void change(float decent) {
+    public void change(@NonNull Direction mDirection, float decent) {
+        this.mDirection = mDirection;
         this.decent = decent;
         invalidate();
     }
