@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- 字体变色 -->
     <declare-styleable name="ColorTrackTextView">
         <attr name="normal_color" format="color|reference"/>
         <attr name="changer_color" format="color|reference"/>
+    </declare-styleable>
+
+    <!-- 仿 QQ 运动步数 -->
+    <declare-styleable name="StepView">
+        <attr name="step_out_color" format="color|reference"/>
+        <attr name="step_inner_color" format="color|reference"/>
+        <attr name="step_border_width" format="dimension|reference"/>
+        <attr name="step_max_num" format="float"/>
+        <attr name="step_text_color" format="color|reference"/>
+        <attr name="step_text_size" format="dimension|reference"/>
+        <attr name="step_text_str" format="string|reference"/>
     </declare-styleable>
 </resources>

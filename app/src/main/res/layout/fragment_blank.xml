@@ -3,13 +3,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.BlankFragment">
 
     <TextView
         android:id="@+id/frame_text"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/hello_blank_fragment"
         android:gravity="center"/>
+
+    <com.botpy.constrainlayoutexample.view.StepView
+        android:id="@+id/step_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:step_inner_color="@color/colorAccent"
+        app:step_out_color="@color/colorPrimary"
+        app:step_text_size="20sp"
+        app:step_border_width="10dp" />
 
 </FrameLayout>
