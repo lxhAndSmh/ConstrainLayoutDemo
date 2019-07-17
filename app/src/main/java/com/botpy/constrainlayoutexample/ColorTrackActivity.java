@@ -47,7 +47,7 @@ public class ColorTrackActivity extends AppCompatActivity {
             params.weight = 1;
 
             ColorTrackTextView colorTrackTextView = new ColorTrackTextView(this);
-            colorTrackTextView.setmNormalPaint(getResources().getColor(R.color.gray));
+            colorTrackTextView.setmNormalPaint(getResources().getColor(R.color.colorPrimary));
             colorTrackTextView.setmChangerPaint(getResources().getColor(R.color.colorAccent));
             colorTrackTextView.change(ColorTrackTextView.Direction.DIRECTION_LEFT, 0);
 

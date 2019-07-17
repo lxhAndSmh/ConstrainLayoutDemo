@@ -18,7 +18,7 @@
         android:src="@drawable/ic_launcher"/>
 
     <Button
-        android:text="登录"
+        android:text="跳转字体变色"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/button"
@@ -31,7 +31,7 @@
         android:layout_marginRight="8dp" />
 
     <Button
-        android:text="注册"
+        android:text="换肤"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/button2"
@@ -41,6 +41,16 @@
         android:layout_marginBottom="56dp"
         app:layout_constraintLeft_toLeftOf="@+id/guideline" />
 
+    <Button
+        android:text="多类型View"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button3"
+        android:textColor="@color/white"
+        android:background="@color/colorAccent"
+        app:layout_constraintBottom_toTopOf="@id/button"
+        android:layout_marginBottom="56dp"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline" />
 
     <android.support.constraint.Guideline
         android:layout_width="wrap_content"
