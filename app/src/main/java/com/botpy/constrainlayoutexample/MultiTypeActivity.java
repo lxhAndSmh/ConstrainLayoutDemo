@@ -11,7 +11,10 @@ import com.botpy.constrainlayoutexample.view.MultiTypeView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-
+/**
+ * @author liuxuhui 
+ * @date 2019-07-24
+ */
 public class MultiTypeActivity extends AppCompatActivity {
 
     @BindView(R.id.linear_layout)

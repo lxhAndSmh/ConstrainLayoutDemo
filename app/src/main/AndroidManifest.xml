@@ -13,7 +13,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MultiTypeActivity"></activity>
+        <activity android:name=".kotlin.KotlinActivity"></activity>
+        <activity android:name=".MultiTypeActivity" />
         <activity android:name=".ColorTrackActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

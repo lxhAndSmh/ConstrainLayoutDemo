@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.botpy.constrainlayoutexample.kotlin.KotlinActivity;
 import com.botpy.constrainlayoutexample.view.ColorTrackTextView;
 import com.botpy.framelibrary.BaseSkinActivity;
 import com.botpy.framelibrary.skin.SkinManager;
@@ -30,7 +31,7 @@ public class MainActivity extends BaseSkinActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.button, R.id.button2, R.id.button3})
+    @OnClick({R.id.button, R.id.button2, R.id.button3, R.id.button4})
     public void onClick(View v) {
         Intent intent;
         switch (v.getId()) {
@@ -58,6 +59,10 @@ public class MainActivity extends BaseSkinActivity {
                 break;
             case R.id.button3:
                 intent = new Intent(this, MultiTypeActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.button4:
+                intent = new Intent(this, KotlinActivity.class);
                 startActivity(intent);
                 break;
             default:
