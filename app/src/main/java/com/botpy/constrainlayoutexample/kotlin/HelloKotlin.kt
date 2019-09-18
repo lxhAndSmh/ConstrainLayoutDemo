@@ -16,8 +16,13 @@ fun main(args: Array<String>) {
     // in 关键字
     var x = 3
     var y = 10
-    //判断一个对象是否在一个区间内
+    //判断一个对象是否在一个区间内，until 是半开区间：不包含尾部（y - 1）
     if(x in 1 until y - 1) {
+        println("OK")
+    }
+
+    //.. 表示闭区间: 包含10
+    if(10 in 1 .. 10) {
         println("OK")
     }
 
@@ -38,7 +43,7 @@ fun main(args: Array<String>) {
 
     //控制检测
     println(arrays?.size)
-
+    
     //函数
     println(say("Hello"))
     println(say1("World"))
@@ -47,6 +52,19 @@ fun main(args: Array<String>) {
 
     //变长参数
     println(hasEmptyStr("I", "love", "", "you"))
+
+    //只读 map
+    var map = mapOf("a" to 1, "b" to 2, "c" to 3)
+    println("a is ${map["a"]}")
+    for(x in map){
+        println("key $x")
+    }
+
+    //交换两个变量
+    var a = 1
+    var b = 2
+    a = b.also { b = a }
+    println("a is $a, b is $b")
 }
 fun cases(obj: Any) {
     when(obj) {

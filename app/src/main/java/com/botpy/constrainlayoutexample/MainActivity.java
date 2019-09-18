@@ -24,11 +24,14 @@ import io.reactivex.functions.Consumer;
 
 public class MainActivity extends BaseSkinActivity {
 
+    private final static String TAG = "MainActivity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        Log.d(TAG, "====" + "123".equals(null));
     }
 
     @OnClick({R.id.button, R.id.button2, R.id.button3, R.id.button4})
@@ -49,7 +52,7 @@ public class MainActivity extends BaseSkinActivity {
                                 if(aBoolean) {
                                     String skinPath = Environment.getExternalStorageDirectory().getAbsolutePath() +
                                             File.separator + "app.skin";
-                                    Log.d("MainActivity", "---skinPath: " + skinPath);
+                                    Log.d(TAG, "---skinPath: " + skinPath);
                                     SkinManager.getInstance().loadSkin(skinPath);
                                     Toast.makeText(MainActivity.this, "点击注册", Toast.LENGTH_SHORT).show();
                                 }
