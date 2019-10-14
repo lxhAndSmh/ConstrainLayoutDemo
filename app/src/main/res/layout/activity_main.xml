@@ -17,6 +17,15 @@
         app:layout_constraintTop_toTopOf="parent"
         android:src="@drawable/ic_launcher"/>
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="请输入"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:inputType="textVisiblePassword"
+        android:digits="@string/input_type_digits"/>
+
     <Button
         android:text="跳转字体变色"
         android:layout_width="wrap_content"

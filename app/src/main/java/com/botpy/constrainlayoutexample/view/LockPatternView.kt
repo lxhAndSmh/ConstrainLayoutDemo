@@ -3,6 +3,7 @@ package com.botpy.constrainlayoutexample.view
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Paint
+import android.support.design.widget.MathUtils
 import android.util.AttributeSet
 import android.view.View
 import com.botpy.constrainlayoutexample.kotlin.Point
@@ -66,7 +67,7 @@ class LockPatternView: View {
                     canvas.restore()
                     canvas.save()
                     normalPaint.color = innerNormalColor
-                    canvas.drawCircle(point.centerX.toFloat(), point.centerY.toFloat(), outerCircularRadius.toFloat(), normalPaint)
+                    canvas.drawCircle(point.centerX.toFloat(), point.centerY.toFloat(), outerCircularRadius.toFloat() / 6, normalPaint)
                     canvas.restore()
                 }
             }
@@ -95,7 +96,7 @@ class LockPatternView: View {
     }
 
     private fun drawLine(point: Point, lastPoint: Point, canvas: Canvas) {
-
+        val d = MathUtils.dist(point.centerX.toFloat(), point.centerY.toFloat(), lastPoint.centerX.toFloat(), lastPoint.centerY.toFloat());
     }
 
     private fun initPoints() {
@@ -115,7 +116,7 @@ class LockPatternView: View {
         outerCircularRadius = mWidth / 12
         for(i in points.indices) {
             for(j in points[i].indices) {
-                points[i][j] = Point(offsetX + 2 * outerCircularRadius + 4 * outerCircularRadius * i, offsetY + 2 * outerCircularRadius + 4 * outerCircularRadius * i)
+                points[i][j] = Point(offsetX + 2 * outerCircularRadius + 4 * outerCircularRadius * (i % 3), offsetY + 2 * outerCircularRadius + 4 * outerCircularRadius * (j % 3), i)
             }
         }
 

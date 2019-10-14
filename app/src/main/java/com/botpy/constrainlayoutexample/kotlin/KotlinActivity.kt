@@ -19,19 +19,7 @@ class KotlinActivity : AppCompatActivity() {
 
         textView.text = getString(R.string.hello_world)
 
-        editText.addTextChangedListener(object : TextWatcher {
-            //不需要重写的方法
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) = Unit
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-            }
-
-            //不需要重写的方法
-            override fun afterTextChanged(s: Editable?) = Unit
-        })
-
-        editText.setText("$HelloKotlin.isEmpty(\"非空\")")
+        editText.setText("${HelloKotlin.isEmpty("非空")}")
     }
 
     fun AppCompatActivity.showToast(text: CharSequence, duration: Int = Toast.LENGTH_SHORT) {
