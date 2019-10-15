@@ -21,6 +21,7 @@
         app:layout_constraintLeft_toLeftOf="parent"/>
 
     <com.botpy.constrainlayoutexample.view.LockPatternView
+        android:id="@+id/lockView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 </android.support.constraint.ConstraintLayout>
